@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Pages</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #333;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            border-radius: 10px;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+            width: 400px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 10px 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .card_title {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .card_title h1 {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .form input {
+            margin: 10px 0;
+            width: 100%;
+            background-color: #e2e2e2;
+            border: none;
+            outline: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+        }
+
+        .form button {
+            background-color: #4796ff;
+            color: #ffffff;
+            font-size: 16px;
+            outline: none;
+            border-radius: 5px;
+            border: none;
+            padding: 8px 15px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .form button:hover {
+            background-color: #3578e5;
+        }
+
+        .card_terms {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .card_terms input[type="checkbox"] {
+            background-color: #e2e2e2;
+        }
+
+        .card_terms span {
+            margin: 5px;
+            font-size: 13px;
+        }
+
+        .card a {
+            color: #4796ff;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#signup">Sign Up</a>
+        <a href="#login">Login</a>
+    </div>
+
+    <div id="signup" class="container">
+        <div class="card_title">
+            <h1>Sign Up for Your Goals</h1>
+        </div>
+        <form class="form" action="#" method="post">
+            <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="card_terms">
+            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+            <span>I agree to the <a href="#" target="_blank">Terms of Service</a></span>
+        </div>
+    </div>
+
+    <div id="login" class="container" style="display: none;">
+        <div class="card_title">
+            <h1>Login for Your Goals</h1>
+        </div>
+        <form class="form" action="#" method="post">
+            <input type="email" id="loginEmail" name="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('a[href="#signup"]').addEventListener('click', function () {
+            document.getElementById('signup').style.display = 'block';
+            document.getElementById('login').style.display = 'none';
+        });
+
+        document.querySelector('a[href="#login"]').addEventListener('click', function () {
+            document.getElementById('signup').style.display = 'none';
+            document.getElementById('login').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
+
